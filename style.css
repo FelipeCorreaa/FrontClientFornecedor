@@ -1,0 +1,93 @@
+/* Adapte as variáveis conforme necessário para o seu projeto */
+
+.button {
+    --color-hover: #2B3044;
+    --background: #362A89;
+    --hover-back: #6D58FF;
+    --hover-front: #1e45d0;
+    padding: 8px 28px;
+    border-radius: 100px;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    border: none;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    color: var(--color, #fff);
+    background: var(--background, #2B3044);
+    transition: color .2s linear, background .3s linear;
+}
+
+.button.alternative {
+    --color-hover: #2B3044;
+    --background: #362A89;
+    --hover-back: #6D58FF;
+    --hover-front: #F6F8FF;
+}
+
+.button.simple {
+    --background: #275EFE;
+    --background-hover: #1749DB;
+}
+
+.button:not(.simple):before,
+.button:not(.simple):after {
+    content: '';
+    position: absolute;
+    background: var(--hover-back, #6D58FF);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200%;
+    border-radius: var(--br, 40%);
+    transform: translateY(var(--y, 50%));
+    transition: transform .4s ease-in, border-radius .5s ease;
+}
+
+.button:not(.simple):after {
+    --pb: var(--hover-front, #5C86FF);
+}
+
+.button div {
+    z-index: 1;
+    position: relative;
+    display: flex;
+}
+
+.button.in {
+    --name: move;
+}
+
+.button:not(.out):before,
+.button:not(.out):after {
+    --y: 0;
+    --br: 5%;
+}
+
+.button.out {
+    --name: move-out;
+}
+
+/* Adapte conforme necessário para o seu projeto */
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    font-family: 'Inter UI', 'Inter', Arial;
+    justify-content: center;
+    align-items: center;
+    background: #E1E6F9;
+}
+
+

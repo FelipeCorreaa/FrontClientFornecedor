@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Área do Cliente</title>
+</head>
+<body>
+  <section id="conteudo">
+    <h2>Área do Cliente</h2>
+    <form id="pedidoForm">
+      <label for="token">Token:</label>
+      <input type="text" id="token" name="token" required>
+
+      <label for="clienteId">Cliente ID:</label>
+      <input type="text" id="clienteId" name="clienteId" required>
+
+      <label for="dataPedido">Data do Pedido:</label>
+      <input type="datetime-local" id="dataPedido" name="dataPedido" required>
+
+      <button type="button" onclick="criarPedido(Token,clienteId,dataPedido)">Criar Pedido</button>
+    </form>
+
+    <div id="resultadoPedido"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
